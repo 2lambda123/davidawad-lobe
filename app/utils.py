@@ -65,7 +65,7 @@ def find_state_from_coords(lat, long) -> str:
 
 def chase_lookup(**kwargs):
     print(kwargs)
-    r = requests.get(CHASE_ENDPOINT, json=kwargs)
+    r = requests.get(CHASE_ENDPOINT, json=kwargs, timeout=60)
     print (r.status_code)
     print (r.text)
     if r.status_code == 200:

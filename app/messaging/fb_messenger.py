@@ -208,7 +208,7 @@ def send_content(recipient_id: str, content):
     request_object = requests.post(FB_MESSENGER_ENDPOINT,
                                    params=params,
                                    headers=headers,
-                                   data=data)
+                                   data=data, timeout=60)
 
     if request_object.status_code != 200:
         log(request_object)
